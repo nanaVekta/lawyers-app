@@ -1,0 +1,74 @@
+ion-content{
+  --ion-background-color: #f7f7f7;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.close{
+  height: 8px;
+  background-color: #828282;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  border-radius: 4px;
+}
+
+img{
+  border-radius: 40px;
+
+}
+
+.nameCard{
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #50424f;
+  width: 70%;
+  color: #fff;
+  padding: 5px;
+  border-radius: 20px;
+  margin-top: -50px;
+  z-index: 9999;
+  position: relative;
+
+  p{
+    margin-top: -5px;
+  }
+
+  .firm{
+    font-weight: lighter;
+    margin-top: -15px !important;
+  }
+}
+
+.text-center{
+  text-align: center;
+}
+
+.first{
+  height: 20px;
+  background-color: #857e86;
+  border-radius: 20px;
+  width: 55%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -25px;
+}
+
+.second{
+  height: 20px;
+  background-color: #d3d1d4;
+  border-radius: 20px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -25px;
+}
+
+.head{
+  color: #301b20;
+}
+
+ion-footer{
+  ion-button{
+    --background: #9f589c;
+  }
+}

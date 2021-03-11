@@ -1,0 +1,62 @@
+<ion-content>
+
+  <div class="ion-padding">
+    <div class="close" (click)="dismiss()"></div>
+  </div>
+
+  <div class="ion-padding">
+    <img [src]="picture">
+    <div class="nameCard">
+      <h5 class="text-center">{{name}}</h5>
+      <p class="text-center">{{type}} lawyer</p>
+      <p class="text-center firm"><small>{{rating}} <ion-icon style="color: gold; " name="star"></ion-icon> &nbsp; &bull; &nbsp; {{firm}}</small></p>
+    </div>
+  </div>
+  <div class="second"></div>
+  <div class="first"></div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4>
+        <p class="text-center">Cases won</p>
+        <h1 class="text-center" style="color: #dec209; margin-top: -10px;">{{cases}}</h1>
+      </ion-col>
+      <ion-col col-4>
+        <p class="text-center">Experience</p>
+        <h1 class="text-center" style="color: #116b90; margin-top: -10px;">{{experience}}yrs+</h1>
+      </ion-col>
+      <ion-col col-4>
+        <p class="text-center">Endorsement</p>
+        <h1 class="text-center" style="color: #08733f; margin-top: -10px;">{{endorseement}}</h1>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+  <ion-card>
+    <ion-list lines="none">
+      <ion-item>
+        <h6 class="head">About Lawyer</h6>
+        <ion-chip slot="end" color="success">
+          <label>Available</label>
+        </ion-chip>
+      </ion-item>
+    </ion-list>
+    <ion-card-content style="margin-top: -20px; color: #aaaaaa;">
+      <p>{{about}}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="ion-padding" style="margin-top: -20px;">
+      <h5 class="head">Location</h5>
+  </div>
+  <ion-card style="margin-top: -15px;">
+    <img src="assets/map.png">
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="block">Book Appointment</ion-button>
+  </ion-toolbar>
+</ion-footer>

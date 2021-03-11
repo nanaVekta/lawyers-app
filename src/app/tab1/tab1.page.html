@@ -1,17 +1,126 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-list lines="none">
+    <ion-item>
+      <ion-icon name="menu-outline"></ion-icon>
+      <ion-icon slot="end" name="notifications-outline"></ion-icon>
+      <ion-avatar slot="end"><img src="assets/icon.png"></ion-avatar>
+    </ion-item>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  </ion-list>
+
+  <div class="ion-padding" >
+
+    <h6>Hello Julius,</h6>
+    <h4>Let's help you find a lawyer</h4>
+  </div>
+
+
+  <ion-card class="ion-no-padding">
+    <ion-list class="ion-no-margin" lines="none">
+      <ion-item  class="ion-no-padding">
+        <ion-searchbar animated placeholder="Search lawyer"></ion-searchbar>
+        <div class="filter" slot="end">
+          <ion-icon name="options-outline"></ion-icon>
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+  <ion-list lines="none">
+    <ion-item>
+      <h6 class="head">Category</h6>
+      <h6 slot="end"><small>See all</small></h6>
+    </ion-item>
+  </ion-list>
+
+  <ion-slides class="slides" pager="false" [options]="slideOpts">
+    <ion-slide>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>
+            <ion-card>
+              <ion-list lines="none">
+                <ion-item>
+                    <img width="50px" src="assets/law.png">
+                    <p><small>General</small></p>
+                </ion-item>
+              </ion-list>
+            </ion-card>
+          </ion-col>
+          <ion-col col-6>
+            <ion-card>
+              <ion-list lines="none">
+                <ion-item>
+                    <img width="50px" src="assets/family.png">
+                    <p><small>Family</small></p>
+                </ion-item>
+              </ion-list>
+            </ion-card>
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+    <ion-slide>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>
+            <ion-card>
+              <ion-list lines="none">
+                <ion-item>
+                    <img width="50px" src="assets/handcuffs.png">
+                    <p><small>Criminal</small></p>
+                </ion-item>
+              </ion-list>
+            </ion-card>
+          </ion-col>
+          <ion-col col-6>
+            <ion-card>
+              <ion-list lines="none">
+                <ion-item>
+                    <img width="50px" src="assets/broken-heart.png">
+                    <p><small>Divorce</small></p>
+                </ion-item>
+              </ion-list>
+            </ion-card>
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+
+  </ion-slides>
+
+  <ion-list lines="none">
+    <ion-item>
+      <h6 class="head">Top Lawyers&nbsp;</h6><ion-icon style="color: gold; font-size: large; margin-top: 5px;" name="star"></ion-icon>
+      <h6 slot="end"><small>View all</small></h6>
+    </ion-item>
+  </ion-list>
+
+  <ion-card class="lawyers ion-no-padding"  *ngFor="let lawyer of lawyers" class="ion-activatable ripple-parent" (click)="presentModal(lawyer)">
+    <ion-card-content class="ion-no-margin  ion-no-padding">
+      <ion-list lines="none">
+        <ion-item>
+          <ion-thumbnail class="ion-no-margin"><ion-img [src]="lawyer.picture"></ion-img></ion-thumbnail>
+          <ion-label style="margin-left: 20px;" class="desc">
+            <p style="color: #000"><b>{{lawyer.name}}</b></p>
+            <ion-chip *ngIf="lawyer.type == 'Criminal' " color="warning">
+              <label>{{lawyer.type}}</label>
+            </ion-chip>
+            <ion-chip *ngIf="lawyer.type == 'Intellectual' " color="success">
+              <label>{{lawyer.type}}</label>
+            </ion-chip>
+            <ion-chip *ngIf="lawyer.type == 'Divorce' " color="danger">
+              <label>{{lawyer.type}}</label>
+            </ion-chip>
+            <span style="color: #828282;"><small>&bull; {{lawyer.firm}}</small></span>
+            <p><small>{{lawyer.rating}} <ion-icon style="color: gold; " name="star"></ion-icon></small></p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+    <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+
+  </ion-card>
 </ion-content>
